@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.SeekBar
 import com.google.android.material.slider.Slider
 
 class SecondActivity : AppCompatActivity() {
@@ -41,41 +40,27 @@ class SecondActivity : AppCompatActivity() {
         submit.setOnClickListener {
             var  fullname = intent.getStringExtra("fullname").toString()
             var  email = intent.getStringExtra("email").toString()
-            var  age = intent.getStringExtra("email").toString()
+            var  age = intent.getStringExtra("age").toString()
             var  gender = intent.getStringExtra("gender").toString()
+            var  profile = intent.getStringExtra("profile").toString()
 
-            val intent2 = Intent( this, ResultActivity::class.java)
+            val intent2 = Intent( this, ResultActivity2::class.java)
 
-            intent2.putExtra("fullname",fullname)
+            intent2.putExtra("fullname",intent.getStringExtra("fullname"))
             intent2.putExtra("email",email)
             intent2.putExtra("age",age)
             intent2.putExtra("gender",gender)
-            intent2.putExtra("android",android.value.toString())
-            intent2.putExtra("ios",ios.value.toString())
-            intent2.putExtra("flutter",flutter.value.toString())
+            intent2.putExtra("android",android.value)
+            intent2.putExtra("ios",ios.value)
+            intent2.putExtra("flutter",flutter.value)
+            intent2.putExtra("french",french.isChecked)
+            intent2.putExtra("arabic",arabic.isChecked)
+            intent2.putExtra("english",english.isChecked)
+            intent2.putExtra("sports",sports.isChecked)
+            intent2.putExtra("games",games.isChecked)
+            intent2.putExtra("music",music.isChecked)
+            intent2.putExtra("profile",profile)
 
-            var lang = ""
-            if(french.isChecked) {
-                lang += "French "
-            }
-            if(english.isChecked) {
-                lang += "English "
-            }
-            if(arabic.isChecked) {
-                lang += "Arabic "
-            }
-            var hobby = ""
-            if(sports.isChecked) {
-                hobby += "Sports "
-            }
-            if(games.isChecked) {
-                hobby += "Games "
-            }
-            if(music.isChecked) {
-                hobby += "Music "
-            }
-            intent2.putExtra("languages",lang)
-            intent2.putExtra("hobbies",hobby)
 
             startActivity(intent2)
 

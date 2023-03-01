@@ -3,7 +3,7 @@ package com.example.cvv2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.textview.MaterialTextView
-import org.intellij.lang.annotations.Language
+
 
 class ResultActivity : AppCompatActivity() {
 
